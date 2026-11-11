@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Candy Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="menu-page">
+    <header class="top-bar">
+        <div class="logo-area">
+            <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:15px;">
+                <img src="img.scr/logo.jpg" alt="logo" class="logo-small">
+                <h1>Candy Store</h1>
+            </a>
+        </div>
+
+        <a href="menu.html" class="header-link">вернуться в меню.</a>
+    </header>
+
+    <div class="page-container">
+        <main class="cart-list" id="cart-container">
+        </main>
+    </div>
+
+    <div class="cart-summary" id="cart-summary" style="display: none;">
+        <h2 class="total-price">итог: <span id="total-sum">0</span>₽.</h2>
+        <a href="order.html" class="btn-outline-large-box">перейти к оформлению.</a>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-left">
+                <p>Россия, г.уфа, улица комсомола д22.</p>
+                <p>графика работы: пн - пт, 10:00-22:00.</p>
+            </div>
+
+            <div class="footer-center">
+                <span style="font-size: 24px;">⭐ 4.9</span>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>+7 967 734-08-38, РОССИЯ, РЕСПУБЛИКА БАШКОРТОСТАН.</p>
+            </div>
+
+            <div class="footer-right">
+                <p>TikTok: Candy Life, Instagram: Candy Life.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function renderCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let container = document.getElementById('cart-container');
+            let summary = document.getElementById('cart-summary');
+            let totalSpan = document.getElementById('total-sum');
+            
+            container.innerHTML = ''; 
+
+            if (cart.length === 0) {
+                container.innerHTML = '<h2 style="text-align:center; padding: 50px; font-family: Courier New; font-size: 28px;">ваша корзина пуста.</h2>';
+                summary.style.display = 'none';
+                return;
+            }
+
+            summary.style.display = 'flex';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                
+                container.innerHTML += `
+                    <div style="margin-bottom: 20px; border-bottom: 2px solid #f6d0e4; padding-bottom: 15px;">
+                        <h2 style="margin: 0; font-family: 'Courier New';">${item.name}</h2>
+                        <p style="margin: 5px 0 15px 0; font-family: Arial;">Цена: ${item.price}₽ | Кол-во: ${item.quantity} шт.</p>
+                        <button onclick="removeItem(${index})" style="padding: 8px 15px; cursor: pointer; border: 2px solid #000; background: #fff; font-weight: bold; font-family: Arial;">Удалить</button>
+                        <button onclick="addItem(${index})" style="padding: 8px 15px; cursor: pointer; border: 2px solid #000; background: #fff; font-weight: bold; font-family: Arial; margin-left: 10px;">Добавить еще</button>
+                    </div>
+                `;
+            });
+
+            totalSpan.innerText = total;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function addItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity += 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+
+</body>
+</html>

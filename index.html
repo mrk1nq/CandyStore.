@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Candy Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-page">
+    <header class="top-bar">
+        <div class="logo-area">
+            <img src="img.scr/logo.jpg" alt="logo" class="logo-small">
+            <h1>Candy Store</h1>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <main class="home-layout">
+            <div class="home-left">
+                <div class="promo-box">
+                    <h2>доставка по всей
+России.</h2>
+                    <img src="img.scr/box.jpg" alt="Доставка" style="width:150px; margin-top:10px;">
+                </div>
+                <div class="promo-box">
+                    <h2>скидка на
+праздники.</h2>
+                    <img src="img.scr/sale.jpg" alt="Скидка" style="width:150px; margin-top:10px;">
+                </div>
+            </div>
+
+            <div class="home-right">
+                <h2 class="new-title">новинки:</h2>
+                <img src="img.scr/cok.jpg" alt="Голубая лагуна" class="new-img">
+                <a href="menu.html" class="btn-outline-small" style="display:block; text-align:center; margin-top:10px;">смотреть</a>
+            </div>
+        </main>
+
+        <section class="main-action">
+            <h2 style="font-size: 24px; margin-bottom: 20px;">кондитерская «Candy Store».</h2>
+            <div class="main-action-content">
+                <div>
+                    <img src="img.scr/keks.jpg" alt="Кексы" class="cupcakes-img">
+                    <a href="menu.html" class="new-link">новинка.</a>
+                </div>
+                <div class="btn-group">
+                    <a href="menu.html" class="btn-outline big-btn">меню</a>
+                    <a href="cart.html" class="btn-outline big-btn">корзина</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <h2 style="color: #8a4a5a; font-size: 24px; margin-bottom: 15px;">популярные отзывы:</h2>
+            
+            <div class="review-bubble" style="margin-bottom: 15px; max-width: 600px; display: block;">
+                <b>сандра:</b> еда прекрасная, заказывала подружанк на день рождения!!
+            </div>
+            
+            <button onclick="openReviews()" style="padding: 10px 20px; border: 2px solid #8a4a5a; background: transparent; color: #8a4a5a; font-family: 'Courier New'; font-weight: bold; font-size: 16px; cursor: pointer; transition: 0.3s;" onmouseover="this.style.background='#8a4a5a'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#8a4a5a';">читать далее</button>
+        </section>
+    </div>
+
+    <div id="reviewsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000;">
+        <div style="background: #fff; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.2); max-height: 80vh; overflow-y: auto;">
+            
+            <button onclick="closeReviews()" style="position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: #333;">✖</button>
+            
+            <h2 style="color: #333; font-size: 24px; margin-bottom: 20px; font-family: Arial;">Отзывы</h2>
+            
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                <p style="font-size: 18px; font-weight: bold; color: #8a4a5a; margin-bottom: 5px;">Керт ⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; color: #333;">отличная кондитерская, торты просто тают во рту!</p>
+            </div>
+            
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><p style="font-size: 18px; font-weight: bold; color: #8a4a5a; margin-bottom: 5px;">Ноллан ⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; color: #333;">очень вкусные десерты, вежливые курьеры и быстрая доставка. рекомендую!</p>
+            </div>
+
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                <p style="font-size: 18px; font-weight: bold; color: #8a4a5a; margin-bottom: 5px;">Арина ⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; color: #333;">лучшая пекарня в городе, заказываем на каждый праздник!</p>
+            </div>
+
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                <p style="font-size: 18px; font-weight: bold; color: #8a4a5a; margin-bottom: 5px;">Элин ⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; color: #333;">очень вкусные кексы, но доставка немного задержалась.</p>
+            </div>
+
+            <div>
+                <p style="font-size: 18px; font-weight: bold; color: #8a4a5a; margin-bottom: 5px;">Нэлла ⭐⭐⭐⭐⭐</p>
+                <p style="font-size: 16px; color: #333;">заказывала торт на юбилей, гости были в восторге. спасибо!</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-left">
+                <p>Россия, г.уфа, улица комсомола д22.</p>
+                <p>графика работы: пн - пт, 10:00-22:00.</p>
+            </div>
+            <div class="footer-center">
+                <span style="font-size: 24px;">⭐ 4.9</span>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>+7 967 734-08-38, РОССИЯ, РЕСПУБЛИКА БАШКОРТОСТАН.</p>
+            </div>
+            <div class="footer-right">
+                <p>TikTok: Candy Life,
+Instagram: Candy Life.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openReviews() {
+            document.getElementById('reviewsModal').style.display = 'flex';
+        }
+
+        function closeReviews() {
+            document.getElementById('reviewsModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

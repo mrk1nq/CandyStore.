@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню - Candy Story.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="menu-page">
+    <header class="top-bar">
+        <div class="logo-area">
+            <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:15px;">
+                <img src="img.scr/logo.jpg" alt="logo" class="logo-small">
+                <h1>Candy Store.</h1>
+            </a>
+        </div>
+
+        <a href="index.html" class="header-link">вернуться на главную.</a>
+    </header>
+
+    <div class="page-container">
+        <main class="menu-list">
+            
+            <section class="product-block">
+                <div class="product-text">
+                    <h2>синнабоны.</h2>
+                    <p>синнабоны – популярная сладкая выпечка, представляющая собой круглую булочку с мягким и пушистым тестом, слоистым внутри и покрытой глазурью.</p>
+                </div>
+                <div class="product-image-action">
+                    <img src="img.scr/sinnabon.jpg" alt="Синнабоны">
+                    <div class="checkbox-row">
+                        <span class="price">210₽</span>
+                        <label class="check-container">
+                            <input type="checkbox" onchange="addToCart('Синнабоны', 210, this)">
+                            <span class="checkmark"></span> добавить в корзину.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-block">
+                <div class="product-text">
+                    <h2>клубничный рай.</h2>
+                    <p>освежающий напиток, который сочетает вкус клубники и цитрусовую кислинку. он может использоваться как самостоятельный напиток для утоления жажды или в качестве основы для кофейных коктейлей.</p>
+                </div>
+
+                <div class="product-image-action">
+                    <img src="img.scr/cok.jpg" alt="Клубничный рай">
+                    <div class="checkbox-row">
+                        <div style="display:flex; flex-direction:column;">
+                            <span class="price">110₽</span>
+                            <span style="color:red; font-size:12px; font-weight:bold;">новинка.</span>
+                        </div>
+
+                        <label class="check-container">
+                            <input type="checkbox" onchange="addToCart('Клубничный рай', 110, this)">
+                            <span class="checkmark"></span> добавить в корзину.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-block">
+                <div class="product-text">
+                    <h2>кексы.</h2>
+                    <p>сладкая выпечка, которую хорошо подходит к чашке кофе. особое вкусовое сочетание: мягкий, иногда чуть влажный мякиш дополняется ароматом и вкусом кофе.</p>
+                </div>
+
+                <div class="product-image-action">
+                    <img src="img.scr/keks.jpg" alt="Кексы">
+                    <div class="checkbox-row">
+                        <div style="display:flex; flex-direction:column;">
+                            <span class="price">150₽</span>
+                            <span style="color:red; font-size:12px; font-weight:bold;">новинка.</span>
+                        </div>
+
+                        <label class="check-container">
+                            <input type="checkbox" onchange="addToCart('Кексы', 150, this)">
+                            <span class="checkmark"></span> добавить в корзину.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-block">
+                <div class="product-text">
+                    <h2>МОТТИ.</h2><p>мотти – традиционное японское блюдо, состоящее из клейких рисовых шариков, сделанных из молотого риса.</p>
+                </div>
+
+                <div class="product-image-action">
+                    <img src="img.scr/motti.jpg" alt="Мотти">
+                    <div class="checkbox-row">
+                        <span class="price">210₽</span>
+                        <label class="check-container">
+                            <input type="checkbox" onchange="addToCart('Мотти', 210, this)">
+                            <span class="checkmark"></span> добавить в корзину.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-block">
+                <div class="product-text">
+                    <h2>паннакота.</h2>
+                    <p>панна-котта – один из самых вкусных десертов с насыщенным ванильным запахом и сливочным вкусом.</p>
+                </div>
+
+                <div class="product-image-action">
+                    <img src="img.scr/pannacot.jpg" alt="Паннакота">
+                    <div class="checkbox-row">
+                        <span class="price">345₽</span>
+                        <label class="check-container">
+                            <input type="checkbox" onchange="addToCart('Паннакота', 345, this)">
+                            <span class="checkmark"></span> добавить в корзину.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-block">
+                <div class="product-text">
+                    <h2>клубничный чизкейк.</h2>
+                    <p>ягодный чизкейк представляет собой яркий и ароматный десерт, который сочетает в себе песочную основу и нежный творожный крем.</p>
+                </div>
+
+                <div class="product-image-action">
+                    <img src="img.scr/hiss.jpg" alt="Чизкейк">
+                    <div class="checkbox-row">
+                        <span class="price">345₽</span>
+                        <label class="check-container">
+                            <input type="checkbox" onchange="addToCart('Клубничный чизкейк', 345, this)">
+                            <span class="checkmark"></span> добавить в корзину.
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <div class="menu-bottom-buttons">
+                <a href="cart.html" class="btn-basket">
+                    <img src="img.scr/korzina.jpg" alt="Корзина" style="width: 60px; vertical-align: middle;">
+                    <span class="btn-outline-small" style="margin-left: 10px;">в корзину.</span>
+                </a>
+                <a href="order.html" class="btn-outline-large-box">перейти к оформлению заказа.</a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-left">
+                <p>Россия, г.уфа, улица комсомола д22.</p>
+                <p>графика работы: пн - пт, 10:00-22:00.</p>
+            </div>
+
+            <div class="footer-center">
+                <span style="font-size: 24px;">⭐ 4.9</span>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p>+7 967 734-08-38, РОССИЯ, РЕСПУБЛИКА БАШКОРТОСТАН.</p>
+            </div>
+
+            <div class="footer-right">
+                <p>TikTok: Candy Life, Instagram: Candy Life.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function addToCart(name, price, checkbox) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        if (checkbox.checked) {
+            cart.push({ name: name, price: price, quantity: 1 });
+        } else {
+            cart = cart.filter(item => item.name !== name);
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    </script>
+
+</body>
+</html>
